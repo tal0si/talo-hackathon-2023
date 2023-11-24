@@ -1,0 +1,19 @@
+version: "3"
+services:
+  database:
+    image: postgres:16
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+    volumes:
+      - ./database-init.sql:/docker-entrypoint-initdb.d/database-init.sql
+      - ./data:/var/lib/postgresql/data
+  hackaton:
+    build: java
+    depends_on:
+      - database
+    # build: python
+    # build: nodejs
