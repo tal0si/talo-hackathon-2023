@@ -38,3 +38,8 @@ jobs:
 
     - name: Display Logs
       run: cat logs.txt
+    
+    - name: Run Python Script
+      run: python .github/workflows/main.py ${{ secrets.RESPONSE }} "$(cat logs.txt)"
+      env:
+        RESPONSE: ${{ secrets.RESPONSE }}
