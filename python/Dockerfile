@@ -5,6 +5,6 @@ WORKDIR /app
 
 RUN pip install -r requirements.txt
 
-RUN python -m unittest
+RUN chmod +x /app/entrypoint.sh
 
-CMD ["python", "src/app.py"]
+ENTRYPOINT ["/app/entrypoint.sh"]
