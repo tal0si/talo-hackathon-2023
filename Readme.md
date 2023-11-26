@@ -8,7 +8,7 @@ All project is connected to a postgres database
 ### Start database
 
 ```
-docker compose up database
+docker-compose up -d database
 ```
 
 
@@ -17,5 +17,5 @@ docker compose up database
 You have to de-comment lines with the development technology you want
 
 ```
-docker compose build hackaton & docker compose up hackaton
+docker-compose build hackaton & docker-compose up hackaton
 ```
