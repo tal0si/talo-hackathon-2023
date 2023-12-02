@@ -23,6 +23,8 @@ public class TalosiHackatonEntrypoint  implements CommandLineRunner {
         System.out.println("question 5 :" + question5());
         System.out.println("question 6 :" + question6());
         System.out.println("question 7 :" + question7());
+        System.out.println("question 8 :" + question8());
+        System.out.println("question 9 :" + question9());
         System.out.println("======================================================================");
 
         // Fermeture de l'application
@@ -54,6 +56,12 @@ public class TalosiHackatonEntrypoint  implements CommandLineRunner {
         return "";
     }
     public String question7() {
+        return "";
+    }
+    public String question8() {
+        return "";
+    }
+    public String question9() {
         return "";
     }
 }
