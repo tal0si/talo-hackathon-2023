@@ -63,8 +63,8 @@ INSERT INTO talosien (nom, prenom, date_naissance, date_arrivee, est_associe) VA
 ('Bart', 'Simpson', '1999-08-20', '2023-10-01', false);
 
 INSERT INTO cooptation (employe_id, coopte_id) VALUES
-(3, 14),
-(3, 4),
+(2, 14),
+(2, 4),
 (5, 20),
 (5, 18),
 (6, 19),
@@ -77,13 +77,13 @@ INSERT INTO cooptation (employe_id, coopte_id) VALUES
 (13, 12);
 
 INSERT INTO mission (date_debut, date_fin, nom_client, nom_mission, employe_id) VALUES
-('2022-09-05', '2023-08-01', 'Google', 'Projet de développement web', 3),
+('2022-09-05', '2023-08-01', 'Google', 'Projet de développement web', 2),
 ('2022-11-06', '2024-01-30', 'Microsoft', 'Migration vers le cloud', 14),
 ('2023-09-06', '2025-02-27', 'Amazon', 'Analyse de données', 7),
 ('2023-06-11', '2024-10-03', 'Promod', 'Développement d''application Java Srping boot', 7),
 ('2023-01-25', '2024-06-18', 'Leroy Merlin', 'Développement d''application  NodeJs', 8),
 ('2022-08-09', '2022-09-08', 'Adeo', 'Optimisation de base de données', 4),
-('2022-07-27', '2023-08-21', 'Brainfinger', 'Babyfoot connécté', 5),
+('2022-07-27', '2023-08-21', 'Brainfinger', 'Babyfoot connécté', 2),
 ('2023-10-01', '2025-02-22', 'Intel', 'Recherche en intelligence artificielle', 9),
 ('2023-02-08', '2024-04-03', 'HP', 'Gestion de projet', 10),
 ('2022-06-24', '2023-09-17', 'Dell', 'Virtualisation de serveurs', 7),
@@ -94,6 +94,6 @@ INSERT INTO mission (date_debut, date_fin, nom_client, nom_mission, employe_id) 
 ('2023-10-09', '2023-12-08', 'SAP', 'Implémentation de système ERP', 3),
 ('2022-02-03', '2022-10-01', 'Red Hat', 'Administration de serveurs Linux', 8),
 ('2022-08-06', '2023-10-30', 'Juniper Networks', 'Configuration de routeurs', 5),
-('2023-04-01', '2024-08-23', 'Nvidia', 'Calculs parallèles et GPU', 12),
+('2023-11-01', '2024-08-23', 'Nvidia', 'Calculs parallèles et GPU', 12),
 ('2022-09-18', '2023-11-12', 'Cisco', 'Déploiement de réseau Wi-Fi', 18),
-('2023-06-14', '2023-12-11', 'Vicat', 'Migration vers une architecture microservices', 16);
+('2023-05-14', '2023-12-11', 'Vicat', 'Migration vers une architecture microservices', 2);
