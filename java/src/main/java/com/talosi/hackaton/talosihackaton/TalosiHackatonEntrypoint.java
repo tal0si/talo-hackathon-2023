@@ -13,16 +13,47 @@ public class TalosiHackatonEntrypoint  implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        // Votre code ici...
-        printHelloValue();
+        System.out.println(helloWorld());
+        System.out.println("======================================================================");
+        System.out.println("RESULT :");
+        System.out.println("question 1 :" + question1());
+        System.out.println("question 2 :" + question2());
+        System.out.println("question 3 :" + question3());
+        System.out.println("question 4 :" + question4());
+        System.out.println("question 5 :" + question5());
+        System.out.println("question 6 :" + question6());
+        System.out.println("question 7 :" + question7());
+        System.out.println("======================================================================");
 
         // Fermeture de l'application
         System.exit(0);
     }
 
-    public void printHelloValue() {
+    public String helloWorld() {
         String sql = "SELECT hello FROM hello_world";
         String helloValue = jdbcTemplate.queryForObject(sql, String.class);
-        System.out.println(helloValue);
+        return helloValue;
+    }
+
+    public String question1() {
+        return "";
+    }
+    public String question2() {
+        return "";
+    }
+    public String question3() {
+        return "";
+    }
+    public String question4() {
+        return "";
+    }
+    public String question5() {
+        return "";
+    }
+    public String question6() {
+        return "";
+    }
+    public String question7() {
+        return "";
     }
 }
