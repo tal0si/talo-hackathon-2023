@@ -89,7 +89,7 @@ INSERT INTO mission (date_debut, date_fin, nom_client, nom_mission, employe_id) 
 ('2022-06-24', '2023-09-17', 'Dell', 'Virtualisation de serveurs', 7),
 ('2022-06-23', '2023-03-20', 'Adobe', 'Conception graphique', 16),
 ('2022-09-05', '2022-11-04', 'VMware', 'Virtualisation de postes de travail', 4),
-('2022-06-03', '2023-06-28', 'Symantec', 'Sécurité informatique', 14),
+('2023-11-03', '2023-11-07', 'Symantec', 'Sécurité informatique', 14),
 ('2022-11-10', '2023-08-07', 'Salesforce', 'CRM et gestion des ventes', 14),
 ('2023-10-09', '2023-12-08', 'SAP', 'Implémentation de système ERP', 3),
 ('2022-02-03', '2022-10-01', 'Red Hat', 'Administration de serveurs Linux', 8),

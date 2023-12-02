@@ -28,7 +28,8 @@ public class TalosiHackatonEntrypoint  implements CommandLineRunner {
         System.out.println("======================================================================");
 
         // Fermeture de l'application
-        System.exit(0);
+        if( !Boolean.getBoolean("isRunningUnitTest"))
+            System.exit(0);
     }
 
     public String helloWorld() {
