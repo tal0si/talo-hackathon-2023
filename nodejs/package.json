@@ -1,0 +1,21 @@
+{
+  "name": "talosi-hackaton",
+  "version": "1.0.0",
+  "description": "Talosi Hackaton 2023",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node --experimental-modules src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint src/**/*.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "enum": "^3.0.4",
+    "pg": "^8.11.3"
+  },
+  "devDependencies": {
+    "eslint": "^8.54.0"
+  }
+}
