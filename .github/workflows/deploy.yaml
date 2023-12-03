@@ -20,39 +20,39 @@ jobs:
         echo "Pull Request Title: ${{ github.event.pull_request.title }}"
         echo "Pull Request Author: ${{ github.event.pull_request.user.login }}"
         echo "Branch Head: ${{ github.event.pull_request.head.ref }}"
+  step-2:
+    runs-on: ubuntu-latest
 
-    # runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
 
-    # steps:
-    # - name: Checkout Repository
-    #   uses: actions/checkout@v2
+    - name: Build and Run Docker Compose
+      run: |
+        docker-compose up -d
+      working-directory: .
 
-    # - name: Build and Run Docker Compose
-    #   run: |
-    #     docker-compose up -d
-    #   working-directory: .
+    - name: Sleep for a while to wait for containers to start
+      run: sleep 10s
 
-    # - name: Sleep for a while to wait for containers to start
-    #   run: sleep 10s
+    - name: Get Container Name
+      id: container_name
+      run: echo "::set-output name=name::$(docker-compose ps -q hackaton)"
 
-    # - name: Get Container Name
-    #   id: container_name
-    #   run: echo "::set-output name=name::$(docker-compose ps -q hackaton)"
+    - name: Get Docker Logs
+      run: |
+        docker logs ${{ steps.container_name.outputs.name }} > logs.txt
+      working-directory: .
 
-    # - name: Get Docker Logs
-    #   run: |
-    #     docker logs ${{ steps.container_name.outputs.name }} > logs.txt
-    #   working-directory: .
+    - name: Upload Logs as Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: logs
+        path: logs.txt
 
-    # - name: Upload Logs as Artifact
-    #   uses: actions/upload-artifact@v2
-    #   with:
-    #     name: logs
-    #     path: logs.txt
+    - name: Display Logs
+      run: cat logs.txt
 
-    # - name: Display Logs
-    #   run: cat logs.txt
-    
     # - name: Run Python Script
     #   run: python .github/workflows/main.py ${{ secrets.RESPONSE }} "$(cat logs.txt)"
     #   env:
