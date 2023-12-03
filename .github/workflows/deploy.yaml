@@ -1,0 +1,70 @@
+name: Docker Compose Up and Logs
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+
+jobs:
+  step-1:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Print Pull Request Information
+      run: |
+        echo "Pull Request Number: ${{ github.event.number }}"
+        echo "Pull Request Title: ${{ github.event.pull_request.title }}"
+        echo "Pull Request Author: ${{ github.event.pull_request.user.login }}"
+        echo "Branch Head: ${{ github.event.pull_request.head.ref }}"
+  step-2:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Build and Run Docker Compose
+      run: |
+        docker-compose up -d
+      working-directory: .
+
+  step-3:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Build and Run Docker Compose
+      run: |
+        docker-compose up -d
+      working-directory: .
+
+    - name: Sleep for a while to wait for containers to start
+      run: sleep 10s
+
+    - name: Get Container Name
+      id: container_name
+      run: echo "::set-output name=name::$(docker-compose ps -q hackaton)"
+
+    - name: Get Docker Logs
+      id: get_logs
+      run: |
+        logs=$(docker logs ${{ steps.container_name.outputs.name }})
+        echo "::set-output name=logs::$logs"
+      shell: bash
+      working-directory: .
+
+    - name: Check Secret in Logs
+      run: |
+        if echo "${{ steps.get_logs.outputs.logs }}" | grep -q "${{ secrets.RESPONSE }}"; then
+          echo "YAY you got this!"
+        else
+          echo "Failed."
+          exit 1
+        fi
+      shell: bash
