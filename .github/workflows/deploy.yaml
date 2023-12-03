@@ -32,6 +32,18 @@ jobs:
         docker-compose up -d
       working-directory: .
 
+  step-3:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Build and Run Docker Compose
+      run: |
+        docker-compose up -d
+      working-directory: .
+
     - name: Sleep for a while to wait for containers to start
       run: sleep 10s
 
@@ -40,18 +52,34 @@ jobs:
       run: echo "::set-output name=name::$(docker-compose ps -q hackaton)"
 
     - name: Get Docker Logs
+      id: get_logs
       run: |
-        docker logs ${{ steps.container_name.outputs.name }} > logs.txt
+        logs=$(docker logs ${{ steps.container_name.outputs.name }})
+        echo "::set-output name=logs::$logs"
+      shell: bash
       working-directory: .
 
-    - name: Upload Logs as Artifact
-      uses: actions/upload-artifact@v2
-      with:
-        name: logs
-        path: logs.txt
+    - name: Check Secret in Logs
+      run: |
+        if echo "${{ steps.get_logs.outputs.logs }}" | grep -q "${{ secrets.YOUR_SECRET_NAME }}"; then
+          echo "Secret found in logs!"
+        else
+          echo "Secret not found in logs."
+        fi
+      shell: bash
+    # - name: Get Docker Logs
+    #   run: |
+    #     docker logs ${{ steps.container_name.outputs.name }} > logs.txt
+    #   working-directory: .
 
-    - name: Display Logs
-      run: cat logs.txt
+    # - name: Upload Logs as Artifact
+    #   uses: actions/upload-artifact@v2
+    #   with:
+    #     name: logs
+    #     path: logs.txt
+
+    # - name: Display Logs
+    #   run: cat logs.txt
 
     # - name: Run Python Script
     #   run: python .github/workflows/main.py ${{ secrets.RESPONSE }} "$(cat logs.txt)"
