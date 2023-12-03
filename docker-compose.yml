@@ -15,5 +15,5 @@ services:
     # build: java
     depends_on:
       - database
-    # build: python
+    build: python
     # build: nodejs
