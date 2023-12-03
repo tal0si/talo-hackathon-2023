@@ -61,27 +61,10 @@ jobs:
 
     - name: Check Secret in Logs
       run: |
-        if echo "${{ steps.get_logs.outputs.logs }}" | grep -q "${{ secrets.YOUR_SECRET_NAME }}"; then
-          echo "Secret found in logs!"
+        if echo "${{ steps.get_logs.outputs.logs }}" | grep -q "${{ secrets.RESPONSE }}"; then
+          echo "YAY you got this!"
         else
-          echo "Secret not found in logs."
+          echo "Failed."
+          exit 1
         fi
       shell: bash
-    # - name: Get Docker Logs
-    #   run: |
-    #     docker logs ${{ steps.container_name.outputs.name }} > logs.txt
-    #   working-directory: .
-
-    # - name: Upload Logs as Artifact
-    #   uses: actions/upload-artifact@v2
-    #   with:
-    #     name: logs
-    #     path: logs.txt
-
-    # - name: Display Logs
-    #   run: cat logs.txt
-
-    # - name: Run Python Script
-    #   run: python .github/workflows/main.py ${{ secrets.RESPONSE }} "$(cat logs.txt)"
-    #   env:
-    #     RESPONSE: ${{ secrets.RESPONSE }}
