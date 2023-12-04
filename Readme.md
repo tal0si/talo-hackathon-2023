@@ -17,21 +17,21 @@ Tous les mois :
 
 * Un talosien a une prime de cooptation s'il a coopté un autre talosien, et que le talosien est travail encore chez talosi
 * Un talosien a une prime de mission s'il a eu une mission d'au moins une journée dans le mois
-* Un talosien a une des dividende tout les mois de décembre, s'il travaille encore chez talosi et qu'il est associé
+* Un talosien a une des dividendes tous les mois de décembre, s'il travaille encore chez talosi et qu'il est associé
 
 
 ## Les Algorithmes
 
-* 1 - Combien y a t il de salarié en date du … (5 points) 
-* 2 - Quel est l'âge moyen chez talosi?(7 points)
-* 3 - Combien de mission différentes a fait Michel?(5 points)
-* 4 - Combien de personnes a coopté Paul?(5 points)
-* 5 - Quel est le repas d’Eddy le dimanche 28 septembre 2023? (10 points)
-* 6 - Pourquoi Kevin met une chemise bleue? (10 points)
-* 7 - Calculer la somme des primes de cooptation de michel sur les mois de novembre 2023 (20 points) 
-* 8 - Calculer la somme des primes de mission de michel sur les mois de  novembre 2023 (30 points)  
-* 9 - Calculer la somme des primes de tous les talosiens sur le mois de décembre 2023 (50 points)
-* 10- Créer une MR avec mon code et des tests Unitaire (x points si test Unitaire) (30 points)
+* 1 - Combien y a-t-il de salariés en date du 2022-08-08 ? (5 points) 
+* 2 - Quel est l'âge moyen chez talosi ? (7 points)
+* 3 - Combien de mission différentes a fait Michel ? (5 points)
+* 4 - Combien de personnes a coopté Winnie ? (5 points)
+* 5 - Quel est le repas d’Eddy le dimanche 28 septembre 2023 ? (10 points)
+* 6 - Pourquoi Kevin met une chemise bleue ? (10 points)
+* 7 - Calculer la somme des primes de cooptation de michel sur les mois de novembre 2023 ? (20 points) 
+* 8 - Calculer la somme des primes de mission de michel sur les mois de  novembre 2023 ? (30 points)  
+* 9 - Calculer la somme des primes de tous les talosiens sur le mois de décembre 2023 ? (50 points)
+* 10- Créer une MR avec mon code et des tests Unitaire (x points si test Unitaire) ? (30 points)
 
 
 ## Getting Started
