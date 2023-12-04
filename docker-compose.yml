@@ -14,6 +14,6 @@ services:
   hackaton:
     depends_on:
       - database
-    # build: java
+    build: java
     # build: python
     # build: nodejs
