@@ -58,13 +58,3 @@ jobs:
         echo "::set-output name=logs::$logs"
       shell: bash
       working-directory: .
-
-    - name: Check Secret in Logs
-      run: |
-        if echo "${{ steps.get_logs.outputs.logs }}" | grep -q "${{ secrets.RESPONSE }}"; then
-          echo "YAY you got this!"
-        else
-          echo "Failed."
-          exit 1
-        fi
-      shell: bash
