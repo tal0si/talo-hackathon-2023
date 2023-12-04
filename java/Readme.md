@@ -50,3 +50,7 @@ N'oublie pas de t'armer des essences nécessaires, inscrites dans le parchemin s
 ## Bonne Fortune sur ton Chemin
 
 Que la sagesse de Java t'accompagne dans chaque défi. Que ta quête soit fructueuse, ô brave aventurier de Talosi!
+
+
+
+de quoi faire un merge
