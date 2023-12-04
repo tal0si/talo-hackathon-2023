@@ -12,6 +12,8 @@ services:
       - ./database-init.sql:/docker-entrypoint-initdb.d/database-init.sql
       - ./data:/var/lib/postgresql/data
   hackaton:
+    build:
+      java
     depends_on:
       - database
     # build: java
